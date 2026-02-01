@@ -1,4 +1,4 @@
-[![Build](https://img.shields.io/github/actions/workflow/status/XwhyZ-WHYLD/hfr0-muhalo/ci.yml?branch=main)
+[![BUILD](https://img.shields.io/github/actions/workflow/status/XwhyZ-WHYLD/hfr0-muhalo/ci.yml?branch=main)](https://github.com/XwhyZ-WHYLD/hfr0-muhalo/actions/workflows/ci.yml)
 
 # HFR-0 | **µHALO**
 
