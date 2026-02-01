@@ -4,7 +4,7 @@
 
 > **Stop hallucinations *before* they happen — open‑source micro‑timing drift guardrails for reliable LLMs.**
 
-[![Build](https://img.shields.io/github/actions/workflow/status/XWHYz-Research/hfr0/ci.yml?style=for-the-badge)](../../actions)
+[![BUILD](https://img.shields.io/github/actions/workflow/status/XwhyZ-WHYLD/hfr0-muhalo/ci.yml?branch=main&label=build)](https://github.com/XwhyZ-WHYLD/hfr0-muhalo/actions/workflows/ci.yml)
 [![Stress‑Test 100/100](https://img.shields.io/badge/stress_test-100%2F100-brightgreen?style=for-the-badge)](#stress-test)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 [![Tweet](https://img.shields.io/twitter/url?label=share\&style=for-the-badge\&url=https%3A%2F%2Fgithub.com%2FXWHYz-Research%2Fhfr0)](https://twitter.com/intent/tweet?text=Hallucination‑free%20LLMs%20with%20HFR‑0%20%F0%9F%9A%80&url=https%3A%2F%2Fgithub.com%2FXWHYz-Research%2Fhfr0)
