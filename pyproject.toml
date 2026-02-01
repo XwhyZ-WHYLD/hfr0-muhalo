@@ -1,1 +1,6 @@
-toml\n[project]\nname = \"hfr0\"\nversion = \"0.0.2\"\nrequires-python = \">=3.10\"\n
+[project]
+name = "hfr0"
+version = "0.0.2"
+requires-python = ">=3.10"
+authors = ["XWHYz Research"]
+description = "µHALO – micro-timing drift guardrails against LLM hallucination"
