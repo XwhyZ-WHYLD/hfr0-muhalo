@@ -1,0 +1,1 @@
+toml\n[project]\nname = \"hfr0\"\nversion = \"0.0.2\"\nrequires-python = \">=3.10\"\n
