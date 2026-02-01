@@ -1,3 +1,5 @@
+[![Build](https://github.com/XwhyZ-WHYLD/hfr0-muhalo/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/XwhyZ-WHYLD/hfr0-muhalo/actions/workflows/ci.yml)
+
 # HFR-0 | **µHALO**
 
 > **Stop hallucinations *before* they happen — open‑source micro‑timing drift guardrails for reliable LLMs.**
