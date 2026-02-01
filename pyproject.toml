@@ -1,3 +1,4 @@
+[project]
 name = "hfr0"
 version = "0.0.2"
 requires-python = ">=3.10"
