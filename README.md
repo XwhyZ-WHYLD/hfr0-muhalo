@@ -5,10 +5,16 @@
 ## Abstract
 
 µHALO (Micro‑Hallucination Drift Observer) is a runtime monitoring layer for large language models (LLMs) that measures short‑horizon inter‑token timing variance during streaming generation. The system computes a scalar Hallucination Drift Index (HDI) over a sliding window of token emission intervals and optionally triggers an intervention policy when HDI exceeds a calibrated threshold. We evaluate whether timing drift correlates with hallucination onset on TruthfulQA and HotpotQA under controlled decoding settings. All reported results are reproducible via pinned dependencies, fixed seeds, and versioned configuration files. µHALO does not modify model weights and does not claim to eliminate hallucinations; it evaluates whether micro‑timing instability can serve as an early risk signal.
+Across N runs on TruthfulQA and HotpotQA, HDI achieved ROC AUC = X (95% CI [L, U]) under controlled decoding conditions.
 
 ---
 
 ## 1. Problem Definition
+
+1.1 Operational Definition
+Definition of Hallucination (Evaluation Protocol):
+- TruthfulQA: Model response contradicts ground-truth answer key.
+- HotpotQA: Exact match or F1 below threshold as defined in official evaluation script.
 
 Large language models may produce factually incorrect but fluent outputs (“hallucinations”). Most mitigation strategies operate post‑generation (e.g., output filtering) or via architectural modifications (e.g., retrieval‑augmented generation). This work evaluates a narrower hypothesis:
 
@@ -21,6 +27,10 @@ The goal is not correctness verification but *early risk detection* during decod
 ## 2. Mechanism
 
 ### 2.1 Token Timing Signal
+
+Timing Source:
+All inter-token timestamps are measured using client-side monotonic clock
+via streaming callbacks. Vendor-provided timestamps are not used.
 
 Let:
 
@@ -45,6 +55,10 @@ HDI_i = \frac{\sigma_k}{\mu_k + \epsilon}
 
 where ( \epsilon ) prevents division instability.
 
+Experimental configuration:
+k (window size) = 5 tokens
+epsilon = 1e-6
+
 ### 2.2 Decision Rule
 
 An intervention is triggered when:
@@ -65,6 +79,11 @@ When enabled, intervention executes one of:
 
 Intervention policies are evaluated separately via ablation.
 
+Detection (HDI computation) is evaluated independently
+from intervention strategies. All ablation results isolate
+detection signal from downstream correction mechanisms.
+
+
 ---
 
 ## 3. Evaluation Setup
@@ -77,6 +96,10 @@ Intervention policies are evaluated separately via ablation.
 | HotpotQA   | Full‑wiki dev | 7,405   | EM/F1 scoring           |
 
 Internal datasets (if used) are excluded from headline metrics unless explicitly stated.
+
+| Model | Temp | Top-p | Streaming | Seed | Max tokens |
+| ----- | ---- | ----- | --------- | ---- | ---------- |
+
 
 ### 3.2 Models
 
@@ -140,6 +163,18 @@ max_tokens: 256
 window_size: 5
 threshold_tau: 0.35
 streaming: true
+
+Replication Environments Tested:
+macOS 14 (M3)
+Ubuntu 22.04 (AWS c6i.xlarge)
+Python 3.10–3.12
+
+All results saved under:
+results/
+  truthfulqa_seed42_run1.json
+  roc_truthfulqa_v1.png
+  bootstrap_ci_truthfulqa.json
+
 ```
 
 ### 5.3 Fixed Seed Enforcement
@@ -175,11 +210,18 @@ CSV mirrors JSON fields for aggregation.
 pip install -r requirements.txt
 python scripts/run_truthfulqa.py --config configs/default.yaml
 python scripts/ablation.py --config configs/default.yaml
+
+python scripts/run_truthfulqa.py \
+    --config configs/default.yaml \
+    --output results/truthfulqa_run1.json
+
 ```
 
 Outputs stored in `/outputs`.
 
 ---
+
+![ROC Curve](results/roc_curve_truthfulqa_2026-02-11.png)
 
 ## 6. Ablation Matrix
 
@@ -207,6 +249,18 @@ Each configuration isolates contribution of detection vs intervention.
 
 Network jitter baseline estimated using null prompts and subtracted from HDI normalization window.
 
+All evaluations use fixed prompt ordering.
+Random seeds are fixed where supported by API.
+Multiple runs performed to capture API variance.
+
+ROC AUC is computed using sklearn.metrics.roc_auc_score.
+Class imbalance is handled using stratified bootstrap resampling.
+
+Each API call is executed independently.
+Variance across calls is captured via multiple runs.
+Timing noise from network jitter is modeled separately
+from semantic drift via control prompts.
+
 ---
 
 ## 8. Threat Model
@@ -233,6 +287,14 @@ Network jitter baseline estimated using null prompts and subtracted from HDI nor
 * Effect size varies across models
 * Does not guarantee correctness
 
+* If a model vendor batches or buffers tokens internally,
+micro-timing measurements may not reflect decoder-level uncertainty.
+
+* No statistically significant improvement was observed
+when streaming was disabled.
+
+
+
 ---
 
 ## 10. Failure Modes
@@ -241,6 +303,10 @@ Network jitter baseline estimated using null prompts and subtracted from HDI nor
 * False negatives if hallucination occurs without timing drift
 * Reduced signal reliability under aggressive rate limiting
 * Closed-source endpoints may obscure timing granularity
+
+* If a model vendor batches or buffers tokens internally,
+micro-timing measurements may not reflect decoder-level uncertainty.
+
 
 ---
 
