@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "hfr0"
 version = "0.0.2"
@@ -6,3 +10,10 @@ description = "µHALO – micro-timing drift guardrails against LLM hallucinatio
 authors = [
   { name = "XWHYz Research", email = "r@xwhyz.org" }
 ]
+
+[project.optional-dependencies]
+dev = ["ruff", "pytest"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hfr0"]

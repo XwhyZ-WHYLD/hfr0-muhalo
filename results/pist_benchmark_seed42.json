@@ -1,0 +1,108 @@
+{
+  "alarms": 0,
+  "hdi_threshold": 2.5,
+  "num_steps": 500,
+  "records": [
+    {
+      "alarm": false,
+      "delta_ns": 79,
+      "step": 480
+    },
+    {
+      "alarm": false,
+      "delta_ns": 80,
+      "step": 481
+    },
+    {
+      "alarm": false,
+      "delta_ns": 70,
+      "step": 482
+    },
+    {
+      "alarm": false,
+      "delta_ns": 93,
+      "step": 483
+    },
+    {
+      "alarm": false,
+      "delta_ns": 94,
+      "step": 484
+    },
+    {
+      "alarm": false,
+      "delta_ns": 60,
+      "step": 485
+    },
+    {
+      "alarm": false,
+      "delta_ns": 65,
+      "step": 486
+    },
+    {
+      "alarm": false,
+      "delta_ns": 88,
+      "step": 487
+    },
+    {
+      "alarm": false,
+      "delta_ns": 66,
+      "step": 488
+    },
+    {
+      "alarm": false,
+      "delta_ns": 76,
+      "step": 489
+    },
+    {
+      "alarm": false,
+      "delta_ns": 81,
+      "step": 490
+    },
+    {
+      "alarm": false,
+      "delta_ns": 86,
+      "step": 491
+    },
+    {
+      "alarm": false,
+      "delta_ns": 77,
+      "step": 492
+    },
+    {
+      "alarm": false,
+      "delta_ns": 80,
+      "step": 493
+    },
+    {
+      "alarm": false,
+      "delta_ns": 72,
+      "step": 494
+    },
+    {
+      "alarm": false,
+      "delta_ns": 92,
+      "step": 495
+    },
+    {
+      "alarm": false,
+      "delta_ns": 75,
+      "step": 496
+    },
+    {
+      "alarm": false,
+      "delta_ns": 83,
+      "step": 497
+    },
+    {
+      "alarm": false,
+      "delta_ns": 74,
+      "step": 498
+    },
+    {
+      "alarm": false,
+      "delta_ns": 81,
+      "step": 499
+    }
+  ],
+  "seed": 42
+}
