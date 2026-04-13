@@ -127,7 +127,9 @@ All experiments use deterministic decoding where supported.
 | TruthfulQA | 0.59        | 0.79     | +22            |
 | HotpotQA   | 0.65        | 0.81     | +24            |
 
-HDI ROC AUC: 0.93 (sequence-level binary classification)
+HDI ROC AUC: TBD — validation in progress.
+> ⚠️ **Status:** Results above are preliminary targets pending full benchmark validation.
+> Final metrics will be published upon completion of reproducible runs under pinned dependencies.
 
 All tables are generated from scripts in `/scripts` using fixed seeds.
 
