@@ -150,7 +150,7 @@ hfr0-muhalo/
 
 `configs/default.yaml`
 
-```
+```yaml
 seed: 42
 temperature: 0.0
 top_p: 1.0
@@ -158,19 +158,12 @@ max_tokens: 256
 window_size: 5
 threshold_tau: 0.35
 streaming: true
-
-Replication Environments Tested:
-macOS 14 (M3)
-Ubuntu 22.04 (AWS c6i.xlarge)
-Python 3.10–3.12
-
-All results saved under:
-results/
-  truthfulqa_seed42_run1.json
-  roc_truthfulqa_v1.png
-  bootstrap_ci_truthfulqa.json
-
 ```
+
+Replication environments tested: macOS 14 (M3), Ubuntu 22.04 (AWS c6i.xlarge), Python 3.10–3.12.
+
+Results saved under `results/` — see `truthfulqa_seed42_run1.json`, `roc_truthfulqa_v1.png`, `bootstrap_ci_truthfulqa.json`.
+
 
 ### 5.3 Fixed Seed Enforcement
 
