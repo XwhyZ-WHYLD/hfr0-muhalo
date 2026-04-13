@@ -39,19 +39,13 @@ Let:
 
 For a sliding window of size ( k ):
 
-[
-\mu_k = \frac{1}{k} \sum_{j=i-k+1}^{i} \Delta_j
-]
+$$\mu_k = \frac{1}{k} \sum_{j=i-k+1}^{i} \Delta_j$$
 
-[
-\sigma_k^2 = \frac{1}{k} \sum_{j=i-k+1}^{i} (\Delta_j - \mu_k)^2
-]
+$$\sigma_k^2 = \frac{1}{k} \sum_{j=i-k+1}^{i} (\Delta_j - \mu_k)^2$$
 
 The **Hallucination Drift Index (HDI)** is defined as:
 
-[
-HDI_i = \frac{\sigma_k}{\mu_k + \epsilon}
-]
+$$HDI_i = \frac{\sigma_k}{\mu_k + \epsilon}$$
 
 where ( \epsilon ) prevents division instability.
 
@@ -63,9 +57,7 @@ epsilon = 1e-6
 
 An intervention is triggered when:
 
-[
-HDI_i > \tau
-]
+$$HDI_i > \tau$$
 
 Threshold ( \tau ) is selected using validation data.
 
