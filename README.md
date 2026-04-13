@@ -141,15 +141,20 @@ All tables are generated from scripts in `/scripts` using fixed seeds.
 
 ```
 hfr0-muhalo/
- ├── configs/
- ├── data/
- ├── scripts/
- │    ├── run_truthfulqa.py
- │    ├── run_hotpotqa.py
- │    ├── ablation.py
+ ├── .github/
+ ├── docs/
+ ├── helm/
  ├── hfr0/
- ├── outputs/
- ├── requirements.txt
+ ├── reproduce/
+ ├── results/
+ ├── scripts/
+ ├── tests/
+ ├── .env.example
+ ├── .gitignore
+ ├── Dockerfile
+ ├── Makefile
+ ├── pyproject.toml
+ ├── requirements-dev.txt
  └── README.md
 ```
 
