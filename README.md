@@ -247,20 +247,6 @@ Each configuration isolates contribution of detection vs intervention.
 * Class imbalance handled via stratified sampling
 * API variance measured via repeated identical prompt calls
 
-Network jitter baseline estimated using null prompts and subtracted from HDI normalization window.
-
-All evaluations use fixed prompt ordering.
-Random seeds are fixed where supported by API.
-Multiple runs performed to capture API variance.
-
-ROC AUC is computed using sklearn.metrics.roc_auc_score.
-Class imbalance is handled using stratified bootstrap resampling.
-
-Each API call is executed independently.
-Variance across calls is captured via multiple runs.
-Timing noise from network jitter is modeled separately
-from semantic drift via control prompts.
-
 ---
 
 ## 8. Threat Model
