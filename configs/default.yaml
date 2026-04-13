@@ -1,0 +1,13 @@
+# µHALO default configuration
+seed: 42
+temperature: 0.0
+top_p: 1.0
+max_tokens: 256
+window_size: 5
+threshold_tau: 0.35
+streaming: true
+
+# Intervention policy (optional)
+# Options: retrieval, abstention, self_consistency
+intervention_policy: abstention
+intervention_enabled: false
