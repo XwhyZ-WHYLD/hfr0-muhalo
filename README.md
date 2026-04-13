@@ -130,9 +130,11 @@ All tables are generated from scripts in `/scripts` using fixed seeds.
 ```
 hfr0-muhalo/
  ├── .github/
+ ├── configs/
  ├── docs/
  ├── helm/
  ├── hfr0/
+ ├── outputs/
  ├── reproduce/
  ├── results/
  ├── scripts/
@@ -143,6 +145,7 @@ hfr0-muhalo/
  ├── Makefile
  ├── pyproject.toml
  ├── requirements-dev.txt
+ ├── requirements.txt
  └── README.md
 ```
 
