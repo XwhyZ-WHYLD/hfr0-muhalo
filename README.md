@@ -5,7 +5,7 @@
 ## Abstract
 
 µHALO (Micro‑Hallucination Drift Observer) is a runtime monitoring layer for large language models (LLMs) that measures short‑horizon inter‑token timing variance during streaming generation. The system computes a scalar Hallucination Drift Index (HDI) over a sliding window of token emission intervals and optionally triggers an intervention policy when HDI exceeds a calibrated threshold. We evaluate whether timing drift correlates with hallucination onset on TruthfulQA and HotpotQA under controlled decoding settings. All reported results are reproducible via pinned dependencies, fixed seeds, and versioned configuration files. µHALO does not modify model weights and does not claim to eliminate hallucinations; it evaluates whether micro‑timing instability can serve as an early risk signal.
-Across N runs on TruthfulQA and HotpotQA, HDI achieved ROC AUC = X (95% CI [L, U]) under controlled decoding conditions.
+Preliminary evaluation on TruthfulQA and HotpotQA is ongoing; reproducible results will be published upon benchmark completion.
 
 ---
 
