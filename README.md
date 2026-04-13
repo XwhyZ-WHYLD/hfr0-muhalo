@@ -34,8 +34,8 @@ via streaming callbacks. Vendor-provided timestamps are not used.
 
 Let:
 
-* ( t_i ) = timestamp of emitted token ( i )
-* ( \Delta_i = t_i - t_{i-1} )
+* $t_i$ = timestamp of emitted token $i$
+* $\Delta_i = t_i - t_{i-1}$
 
 For a sliding window of size ( k ):
 
@@ -47,11 +47,9 @@ The **Hallucination Drift Index (HDI)** is defined as:
 
 $$HDI_i = \frac{\sigma_k}{\mu_k + \epsilon}$$
 
-where ( \epsilon ) prevents division instability.
+where $\epsilon$ prevents division instability.
 
-Experimental configuration:
-k (window size) = 5 tokens
-epsilon = 1e-6
+Experimental configuration: $k$ (window size) = 5 tokens, $\epsilon$ = 1e-6
 
 ### 2.2 Decision Rule
 
