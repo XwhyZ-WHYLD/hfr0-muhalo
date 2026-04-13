@@ -97,10 +97,6 @@ detection signal from downstream correction mechanisms.
 
 Internal datasets (if used) are excluded from headline metrics unless explicitly stated.
 
-| Model | Temp | Top-p | Streaming | Seed | Max tokens |
-| ----- | ---- | ----- | --------- | ---- | ---------- |
-
-
 ### 3.2 Models
 
 | Model       | Version    | Temperature | Top‑p | Max Tokens | Streaming |
