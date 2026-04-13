@@ -59,7 +59,7 @@ An intervention is triggered when:
 
 $$HDI_i > \tau$$
 
-Threshold ( \tau ) is selected using validation data.
+Threshold $\tau$ is selected using validation data.
 
 ### 2.3 Intervention (Optional)
 
