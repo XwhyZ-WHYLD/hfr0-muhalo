@@ -211,12 +211,17 @@ CSV mirrors JSON fields for aggregation.
 
 ```
 pip install -r requirements.txt
-python scripts/run_truthfulqa.py --config configs/default.yaml
-python scripts/ablation.py --config configs/default.yaml
 
 python scripts/run_truthfulqa.py \
     --config configs/default.yaml \
     --output results/truthfulqa_run1.json
+
+python scripts/run_hotpotqa.py \
+    --config configs/default.yaml \
+    --output results/hotpotqa_run1.json
+
+python scripts/ablation.py \
+    --config configs/default.yaml
 
 ```
 
