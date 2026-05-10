@@ -1,5 +1,5 @@
 # HFR‑0 | µHALO
-
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20109617-blue)](https://doi.org/10.5281/zenodo.20109617)
 ---
 
 ## Abstract
